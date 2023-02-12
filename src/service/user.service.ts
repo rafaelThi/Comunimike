@@ -1,12 +1,12 @@
+import { hash } from "bcrypt";
 import { AppDataSource } from "../data-source";
 import { IEditUser, IRecover, IUser } from "../dto/dtosUser";
 import { Users } from "../entity/Users";
-import { PasswordCrypto } from "../utils/passwordCrypto";
 
 
 
 export async function createCliente (user: IUser) {  
-        const passHash = await PasswordCrypto.hashPassword(user.password);
+        const passHash = await hash(user.password, 10);
         const userfind = await AppDataSource.getRepository(Users).findOne({
             where: {
                 email: user.email,
@@ -29,7 +29,7 @@ export async function createCliente (user: IUser) {
 }
 
 export async function createAdmin (user: IUser) {
-        const passHash = await PasswordCrypto.hashPassword(user.password);
+        const passHash = await hash(user.password, 10);
         const userAdm= await AppDataSource.getRepository(Users).findOne({
             where: {
                 email: user.email,
@@ -81,7 +81,7 @@ export async function editUser (editUser: IEditUser) {
 }
 
 export async function recoverUser (recoverPasswordUser: IRecover) {      
-        const passHash = await PasswordCrypto.hashPassword(recoverPasswordUser.newPassword);
+        const passHash = await hash(recoverPasswordUser.newPassword, 10);
 
         const recoverPassUser = new Users();
         recoverPassUser.password = passHash;
