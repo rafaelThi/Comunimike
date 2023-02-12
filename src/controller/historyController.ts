@@ -1,6 +1,3 @@
-import { isUuid } from "uuidv4";
-import { AppDataSource } from "../data-source";
-import { HistoryPurchase } from "../entity/HistoryPurchase";
 import { allHistory, createHistoryByIds } from "../service/history.service";
 
 export async function getAllHistory (req, res) {
