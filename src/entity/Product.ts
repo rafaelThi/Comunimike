@@ -18,7 +18,7 @@ export class Products {
     @Column()
     mark: string;
 
-    @Column()
+    @Column({type: "numeric"})
     amount: number;
 
 }
