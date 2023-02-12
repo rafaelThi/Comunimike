@@ -11,4 +11,7 @@ export class HistoryPurchase{
 
     @Column()
     idProduct:string;
+
+    @Column()
+    create: Date;
 }
