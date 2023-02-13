@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { authRouter } from "./auth.route";
 import { historyRouter } from "./history.route";
 import { productRouter } from "./products.route";
 import { userRouter } from "./user.route";
@@ -12,5 +13,6 @@ route.get("/test", async (req, res) => {
 route.use("/product", productRouter)
 route.use("/user", userRouter)
 route.use("/history", historyRouter)
+route.use("/auth", authRouter)
 
 export default route;
