@@ -3,7 +3,7 @@ import { createSession } from "../service/createSession"
 export async function login (req, res) {
     try {
         const loginSession = await createSession(req.body)
-        return res(loginSession)
+        return res.json({token: loginSession})
     } catch (err) {
         return res.json({ message:  `Erro ao Logar. ${err}` })
     }

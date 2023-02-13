@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+
+        function test() {
+            console.log('oi')
+        }
+
+        function prods(name, mark, color, amount, abount, id) {
+            this.name = name;
+            this.mark = mark;
+            this.color = color;
+            this.amount = amount;
+            this.abount = abount;
+            this.id = id;
+            
+        }
+        function createList() {
+        const token = localStorage.getItem("token");
+        const a = fetch("http://localhost:3330/product/all", {
+          method: "GET",
+          headers: {
+            authorization: token,
+          },
+        })
+          .then((response) => response.json())
+          .then((dat) => {
+            console.log(dat);
+                dat.Products.map((prod) => {
+                    const dadosProd = new prods(prod.name, prod.mark, prod.color, prod.amount, prod.abount)
+                    const lista = document.getElementById("lista");
+                    
+                    const Iname = document.createElement("li");
+                    const Imark = document.createElement("li");
+                    const Icolor = document.createElement("li");
+                    const Iamount = document.createElement("li");
+                    const Iabount = document.createElement("li");
+                    const button = document.createElement("button")
+                    const space = document.createElement("br");
+                    const space2 = document.createElement("br");
+                    
+                    Iname.innerHTML = "Produto: " + " " + dadosProd.name;
+                    Imark.innerHTML = "Amrca: " + " " + dadosProd.mark;
+                    Icolor.innerHTML = "Color: " + " " + dadosProd.color;
+                    Iamount.innerHTML = "Quantidade: " + " " + dadosProd.amount;
+                    Iabount.innerHTML = "Descrição: " + " " + dadosProd.abount;
+                    button.innerHTML 
+                    space.innerHTML;
+                    space2.innerHTML;
+
+                    lista.appendChild(Iname);
+                    lista.appendChild(Imark);
+                    lista.appendChild(Icolor);
+                    lista.appendChild(Iamount);
+                    lista.appendChild(Iabount);
+                    lista.appendChild(button)
+                    lista.appendChild(space);
+                    lista.appendChild(space2);
+                });
+          });
+
+        };
+            </script>
+            <title>Document</title>
+            </head>
+            <body>
+                <div class="produtos">
+                    <ul id="lista">
+                    </ul>
+                </div>
+                <button onclick="createList()">Carregar produtos</button>
+  </body>
+</html>
