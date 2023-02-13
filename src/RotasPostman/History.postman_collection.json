@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "12fbd931-9700-4ea6-b2d8-e4c7abb1120d",
+		"name": "History",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13367387"
+	},
+	"item": [
+		{
+			"name": "Create History",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUser\": \"d17b7c03-6500-492d-8098-11ce474f91ce\",\r\n    \"idProduct\": \"d9cfaf9f-abc4-4b5c-804a-edf1bcba9e48\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3330/history/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3330",
+					"path": [
+						"history",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3330/history/all",
+					"host": [
+						"localhost"
+					],
+					"port": "3330",
+					"path": [
+						"history",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

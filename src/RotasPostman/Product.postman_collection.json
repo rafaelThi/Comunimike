@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "9ffa5d04-d1a0-44a4-a358-4ac4f2d6b6b7",
+		"name": "Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13367387"
+	},
+	"item": [
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"abcdef\",\r\n    \"color\": \"TESTE\",\r\n    \"abount\": \"SOBRE\",\r\n    \"mark\": \"Marca\",\r\n    \"amount\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3330/product/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3330",
+					"path": [
+						"product",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3330/product/find/name/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3330",
+					"path": [
+						"product",
+						"find",
+						"name",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3330/product/find/id/d9cfaf9f-abc4-4b5c-804a-edf1bcba9e48",
+					"host": [
+						"localhost"
+					],
+					"port": "3330",
+					"path": [
+						"product",
+						"find",
+						"id",
+						"d9cfaf9f-abc4-4b5c-804a-edf1bcba9e48"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buy Prod",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3330/product/buy/d9cfaf9f-abc4-4b5c-804a-edf1bcba9e48",
+					"host": [
+						"localhost"
+					],
+					"port": "3330",
+					"path": [
+						"product",
+						"buy",
+						"d9cfaf9f-abc4-4b5c-804a-edf1bcba9e48"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

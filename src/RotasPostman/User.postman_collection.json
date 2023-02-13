@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "1be401c5-103f-49e4-860a-5c83647de293",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13367387"
+	},
+	"item": [
+		{
+			"name": "Creat user admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlRlc3RlQGEiLCJpYXQiOjE2NzYyNDc1NTgsImV4cCI6MTY3NjI1MTE1OH0.D7mZS2poiCC49uL99_4l1GJKh2zb4tZdpEzk7HKL6mw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Rafael\",\r\n    \"email\": \"123\",\r\n    \"password\": \"tempo\",\r\n    \"active\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3330/user/create/admim",
+					"host": [
+						"localhost"
+					],
+					"port": "3330",
+					"path": [
+						"user",
+						"create",
+						"admim"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creat user client",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.VGVzdGUxMjM.bHGtstS481roimL1XKeUZkyI0Tw0Baoq4H8A_rJDc58",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"rafa\",\r\n    \"name\": \"rafael\",\r\n    \"password\": \"tempo\",\r\n    \"active\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3330/user/create/client",
+					"host": [
+						"localhost"
+					],
+					"port": "3330",
+					"path": [
+						"user",
+						"create",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldEmail\": \"test.com\",\r\n    \"newEmail\": \"456\",\r\n    \"name\": \"Rafael\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3330/user/edit",
+					"host": [
+						"localhost"
+					],
+					"port": "3330",
+					"path": [
+						"user",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recover user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"456\",\r\n    \"newPassword\": \"1234567\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3330/user/recover",
+					"host": [
+						"localhost"
+					],
+					"port": "3330",
+					"path": [
+						"user",
+						"recover"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3330/user/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "3330",
+					"path": [
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
